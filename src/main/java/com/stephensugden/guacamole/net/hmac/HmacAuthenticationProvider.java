@@ -66,6 +66,10 @@ public class HmacAuthenticationProvider extends SimpleAuthenticationProvider {
     public HmacAuthenticationProvider() {
         timeProvider = new DefaultTimeProvider();
     }
+    
+    public String getIdentifier() {
+        return "hmac";
+    }
 
     @Override
     public Map<String, GuacamoleConfiguration> getAuthorizedConfigurations(Credentials credentials) throws GuacamoleException {
