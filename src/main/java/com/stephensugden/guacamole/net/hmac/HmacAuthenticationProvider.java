@@ -1,6 +1,7 @@
 package com.stephensugden.guacamole.net.hmac;
 
 import org.glyptodon.guacamole.GuacamoleException;
+import org.glyptodon.guacamole.net.auth.AuthenticatedUser;
 import org.glyptodon.guacamole.net.auth.Credentials;
 import org.glyptodon.guacamole.net.auth.UserContext;
 import org.glyptodon.guacamole.net.auth.simple.SimpleAuthenticationProvider;
@@ -89,7 +90,8 @@ public class HmacAuthenticationProvider extends SimpleAuthenticationProvider {
     }
 
     @Override
-    public UserContext updateUserContext(UserContext context, Credentials credentials) throws GuacamoleException {
+    public UserContext updateUserContext(UserContext context, AuthenticatedUser user ) throws GuacamoleException {
+        Credentials credentials = user.getCredentials();
         HttpServletRequest request = credentials.getRequest();
         GuacamoleConfiguration config = getGuacamoleConfiguration(request);
         if (config == null) {
