@@ -13,9 +13,10 @@ import org.glyptodon.guacamole.properties.StringGuacamoleProperty;
 import org.glyptodon.guacamole.protocol.GuacamoleConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.stephensugden.guacamole.net.hmac.Security;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.*;
+import java.util.*; 
 
 public class HmacAuthenticationProvider extends SimpleAuthenticationProvider {
 
@@ -116,7 +117,13 @@ public class HmacAuthenticationProvider extends SimpleAuthenticationProvider {
         if (signatureVerifier == null) {
             initFromProperties();
         }
-        String signature = request.getParameter(SIGNATURE_PARAM);
+        String signature1 = request.getParameter(SIGNATURE_PARAM);
+
+		//Decrypt signature Here!
+		String secretKey = "Example227111123";
+
+        String test = Security.encrypt(signature1, secretKey);
+        String signature = Security.decrypt(test, secretKey);
 
         logger.debug("Get hmac signature: {}", signature);
 
