@@ -1,3 +1,5 @@
+<!-- Example php class -->
+
 <?php
 include mcrypt
 var message= "This is a sample message";

@@ -1,4 +1,4 @@
-package com.stephensugden.guacamole.net.hmac;
+package com.dmwl.guacamole.net.hmac;
 
 import com.sun.org.apache.xml.internal.security.utils.Base64;
 import org.slf4j.Logger;

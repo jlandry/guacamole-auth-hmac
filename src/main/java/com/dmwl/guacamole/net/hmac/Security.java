@@ -1,4 +1,4 @@
-package com.stephensugden.guacamole.net.hmac;
+package com.dmwl.guacamole.net.hmac;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -31,11 +31,11 @@ public class Security {
 	    }
 	    return new String(output);
 	}
-	
+
 	public static void main(String[] args) {
 	  String key = "1234567891234567";
 	  String data = "example";
 	  System.out.println(Security.decrypt(Security.encrypt(data, key), key));
-	  System.out.println(Security.encrypt(data, key));	    
-	}	
+	  System.out.println(Security.encrypt(data, key));
+	}
 }

@@ -1,4 +1,4 @@
-package com.stephensugden.guacamole.net.hmac;
+package com.dmwl.guacamole.net.hmac;
 
 /**
  * Created with IntelliJ IDEA.
