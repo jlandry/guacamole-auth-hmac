@@ -1,4 +1,4 @@
-package com.dmwl.guacamole.net.hmac;
+package com.dmwl.guacamole.net.encryptedurl;
 
 /**
  * Created with IntelliJ IDEA.
